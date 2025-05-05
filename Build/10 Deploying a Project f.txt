@@ -1,0 +1,54 @@
+Assignment 10: Deploying a Project from GitHub to EC2 Using a New Security Group and User Data
+Step 1: Create a Security Group in EC2
+- Navigate to EC2 Instance.
+- Under Network & Security, go to Security Groups.
+
+Step 2: Configure the Security Group
+- Click Create Security Group.
+- Enter a name for the security group and provide a brief description.
+
+Step 3: Set Inbound Rules- Add inbound rules for:
+- SSH (port default)
+- HTTP (port default)
+- HTTPS (port default)
+- Custom TCP (port 4000)
+- Set the source to Anywhere-IPv4 (0.0.0.0/0).
+- Click Create Security Group.
+
+Step 4: Launch a New EC2 Instance- Go to EC2 Instances and create a new instance.
+- Under Firewall (Security Group), select the existing security group created earlier.
+
+Step 5: Add User Data for Automated Setup- Scroll down to Advanced Details.
+- In the User Data field, enter the following commands:
+#!/bin/bash
+apt-get update
+apt-get upgrade
+apt-get install -y nginx
+systemctl start nginx
+systemctl enable nginx
+apt-get install -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash
+apt-get install -y nodejs
+- Click Launch Instance.
+
+Step 6: Access the Instance via SSH- Copy the instance IP address.
+- Open Bitvise SSH Client, enter the IP in the Host field, and import the client key.
+- Click Log In.
+
+Step 7: Install Dependencies and Clone Repository- Run the following command to install Node.js:
+sudo apt install nodejs
+- Clone the GitHub repository using:
+git clone <Repository_URL>
+- Navigate to the cloned repository directory.
+
+Step 8: Install Project Dependencies and Start the Server- Install required packages using:
+npm install
+- Start the server using:
+node index.js
+
+Step 9: Verify Hosting- Open an Incognito Browser Window.
+- Enter the EC2 instance IP in the address bar to verify the server is running.
+- Check the hosted project using:
+http://52.66.255.244:4000
+
+Result:  Successfully deployed a project from GitHub to EC2 using a new security group and user data!

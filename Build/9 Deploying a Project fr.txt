@@ -1,0 +1,52 @@
+Assignment 9: Deploying a Project from GitHub to EC2
+Step 1: Prepare the GitHub Repository
+- Ensure that there is an existing repository with all required files to host the site (e.g., index.js, package.json).
+
+Step 2: Generate a GitHub Personal Access Token
+- Navigate to Settings > Developer Settings on GitHub.
+- Generate a Personal Access Token (classic) and copy it to a safe note (it cannot be copied again).
+
+Step 3: Create a New EC2 Instance- Create a new EC2 instance and copy its IP address.
+
+Step 4: Connect to EC2 Using SSH Client- Open Bitvise SSH Client and enter the copied IP in the Host field.
+- Import the client key and enter the username as "ubuntu" to log in.
+
+Step 5: Update and Install Required Packages- Open the Terminal Console and run:
+sudo apt-get update
+- Upgrade system packages:
+sudo apt-get upgrade
+- Install Nginx web server:
+sudo apt-get install nginx
+- Install Node.js setup script:
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+- Install Node.js:
+sudo apt install nodejs
+
+Step 6: Clone the GitHub Repository- Copy the repository URL and run the following command to clone it:
+git clone <Repository_URL>
+- Navigate into the cloned repository directory to verify that files have been successfully cloned.
+
+Step 7: Install Dependencies and Start the Server- Install project dependencies using:
+npm install
+- Start the server using:
+node index.js
+- Open the EC2 instance IP in Incognito Mode to check if the website is running.
+
+Step 8: Configure EC2 Security Group- Navigate to EC2 > Security Groups and click on Edit Inbound Rules.
+- Modify inbound rules for SSH, HTTP, and HTTPS, setting the source to Anywhere-IPv4.
+- Add a new rule:
+- Type: Custom TCP
+- Port Range: 4000
+- Source: Anywhere-IPv4
+- Save the changes.
+
+Step 9: Access the Hosted Site- Copy the EC2 instance IP and append :4000 to the URL.
+- Open it in Incognito Mode to verify the site is successfully deployed and running.
+
+Step 10: Make Changes in GitHub and Update the Server- Open the GitHub repository, click on the index.js file, edit and commit the changes with a message.
+- Retrieve the updated files in the EC2 directory using:
+git pull
+- Restart the server using:
+node index.js
+- Refresh the EC2 instance IP in Incognito Mode to confirm the updated content is visible.
+Result:  Successfully deployed a project from GitHub to EC2 and updated changes dynamically!

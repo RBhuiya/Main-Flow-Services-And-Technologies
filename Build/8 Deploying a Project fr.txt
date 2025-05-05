@@ -1,0 +1,34 @@
+Assignment 8: Deploying a Project from a Local Machine to GitHub
+Step 1: Create a New Repository on GitHub
+- Log in to GitHub.
+- Click on the "+" icon (top right) and select New repository.
+- Enter a repository name, choose whether it will be public or private, then click Create repository.
+
+Step 2: Copy the Repository URL
+- Once the repository is created, copy its URL (e.g., https://github.com/username/repository.git).
+
+Step 3: Prepare Your Local Project
+- Open the folder containing your project files.
+- Right-click inside the folder and select Git Bash (or open your preferred terminal).
+
+Step 4: Initialize a Git Repository- Run the following command to initialize Git in the project folder:
+git init
+
+Step 5: Stage Your Project Files- Add all files to Git for tracking:
+git add .
+
+Step 6: Set Up Git Configuration- Set up your GitHub username and email (replace with your actual credentials):
+git config --global user.name "YourGitHubUsername"
+git config --global user.email "youremail@example.com"
+
+Step 7: Commit Your Files- Create an initial commit with a message:
+git commit -m "Initial commit"
+
+Step 8: Add the GitHub Repository as a Remote- Link your local repository to GitHub (replace <Repository_URL> with your copied GitHub URL):
+git remote add origin <Repository_URL>
+
+Step 9: Push Your Project to GitHub- Set the branch to "main" and push the files to GitHub:
+git branch -M main
+git push -u origin main
+
+Step 10: Verify Upload on GitHub- Refresh your GitHub repository page to check if your files have been successfully uploaded.

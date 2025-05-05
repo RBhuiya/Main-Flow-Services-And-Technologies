@@ -1,0 +1,86 @@
+Assignment 11: Build Scaling Plans in AWS to Balance Load on EC2 Instances
+Step 1: Create a Security Group
+- Navigate to the EC2 page in your AWS Console.
+- Under the Network & Security section, click on Security Groups.
+
+Step 2: Create a New Security Group
+- Click on Create Security Group.
+- Name the security group and add a brief description.
+
+Step 3: Configure Inbound Rules- Add the following inbound rules:
+- SSH (default port 22)
+- HTTP (default port 80)
+- HTTPS (default port 443)
+- Custom TCP for port 4000
+- For each rule, set the Source to Anywhere-IPv4 (0.0.0.0/0).
+- Click on Create Security Group.
+
+Step 4: Create a Launch Template- From the left-hand menu, select Launch Templates, then click on Create Launch Template.
+- Name the template and set the version to “v0”. Check the Auto Scaling guidance box.
+
+Step 5: Choose an AMI and Instance Type- Scroll down to Application and OS and select Quick Start > Ubuntu.
+- Select the t2.micro instance type (as it is Free Tier eligible).
+
+Step 6: Create a Key Pair- Create a new key pair for secure SSH login and save it.
+
+Step 7: Configure Network Settings- In the Network Settings > Firewall (security groups) section, choose Select existing groups.
+- Select the security group created in Step 3.
+
+Step 8: Set Up Advanced Details (User Data)- In the Advanced Details section, add the following user data script that automates installation and deployment:
+#!/bin/bash
+apt-get update
+apt-get upgrade
+apt-get install -y nginx
+systemctl start nginx
+systemctl enable nginx
+apt-get install -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash
+apt-get install -y nodejs
+git clone https://github.com/PrasunK8/Prasun_aws.git
+cd Prasun_aws
+npm install
+node index.js
+- Click on Create Launch Template.
+
+Step 9: Create an Auto Scaling Group- In the left-hand menu, select Auto Scaling Groups.
+- Click on Create Auto Scaling Group and assign a name to the group.
+- Under the Launch Template section, select the template created above and choose the version as Latest (1).
+
+Step 10: Configure Auto Scaling Group Settings- In Step 2 of the ASG wizard, select all 3 available Availability Zones and corresponding Subnets, then click Next.
+- In Step 3, configure the target group by creating a new target group using the Default Routing options, then click Next.
+- In Step 4, set the following capacity settings:
+- Desired capacity: 2
+- Minimum capacity: 2
+- Maximum capacity: 3
+- In Step 5, choose Target Tracking Scaling Policy:
+- Provide a policy name.
+- Set the Target Value (for example, 32) and Instance Warmup to 300 seconds.
+- For Steps 6 and 7, review the settings and click Create Auto Scaling Group.
+
+Step 11: Verify Instance Functionality- Go to the Instances section in your EC2 Dashboard.
+- Click on the first instance and copy its IPv4 address.
+- Open a new incognito browser window and enter the copied IP address to verify that the instance and deployed application are functioning.
+
+Step 12: Connect via SSH Using Bitvise- Open Bitvise SSH Client and enter the same IPv4 address in the Host field.
+- Import the key pair that was created earlier and log in as the appropriate user (e.g., “ubuntu”).
+
+Step 13: Simulate Server Load (Optionally)- In the SSH terminal, create a new file using the nano command. For example:
+nano loop.sh
+- Write the following code into the file:
+#!/bin/bash
+while true
+do
+  echo "Looping"
+done
+- Save and exit (Ctrl + X, then Y and Enter).
+- Make the file executable:
+chmod 777 loop.sh
+- Run the script:
+./loop.sh
+
+Step 14: Repeat on a Second Instance- Minimize the current Bitvise client and switch to the second instance.
+- Repeat the SSH connection steps (connect using Bitvise, create the file, make it executable, and run it) on the second instance.
+
+Step 15: Monitor CPU Utilization- In the AWS Console, navigate to the Auto Scaling Group tab or Instances tab.
+- Select both instances and inspect the CPU Utilization graphs.
+- Maximize the CPU Utilization window for a better view of load balancing.

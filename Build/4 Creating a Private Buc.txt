@@ -1,0 +1,28 @@
+Assignment 4: Creating a Private Bucket in AWS, Uploading a File, and Testing Accessibility via a Presigned URL
+Step 1: Create a Private Bucket in Amazon S3
+- Visit Amazon S3 and click on Create Bucket.
+Step 2: Configure Bucket Settings
+- Enter a name for the bucket.
+- Ensure the Block all public access checkbox is checked to keep the bucket private.
+- Leave all other options as default.
+- Scroll down and click Create Bucket.
+Step 3: Open the Bucket
+- After creating the bucket, click on its name to open it.
+Step 4: Upload a File
+- Click the Upload button.
+- Click Add Files and select a file to upload.
+Step 5: Confirm Upload
+- After selecting the file, click Upload to begin the upload process.
+Step 6: Complete Upload
+- Click Close once the upload is successful.
+Step 7: Generate a Presigned URL
+- Select the uploaded file.
+- In the Actions bar, select Share with a Presigned URL.
+Step 8: Set Access Time Limit
+- Define the time duration for which the file should remain accessible.
+- Click Create Presigned URL and copy the generated URL.
+Step 9: Test File Accessibility
+- Paste the copied URL into a new browser window to verify file access within the specified time limit.
+Step 10: Verify Private Access
+- After the set time limit expires, confirm that the file becomes inaccessible.
+- If access is denied, the private bucket setup has been successfully implemented!

@@ -1,0 +1,37 @@
+Assignment 1: Creating an AWS Account and Configuring a Budget
+Step 1: Create an AWS Account
+- The AWS account has already been successfully created in the class.
+
+Step 2: Access Billing and Cost Management
+- Go to your profile and select Billing and Cost Management.
+
+Step 3: Navigate to Budgets
+- Under the Budgets and Planning section in the menu, select Budgets.
+
+Step 4: Create a Budget
+- Click on Create Budget.
+- In Choosing Budget Type, set up the budget as Customize (advanced).
+- Select Cost Budget as the Budget Type and click Next.
+
+Step 5: Set Your Budget
+- Enter a name for the budget (e.g., My_Budget).
+- Leave the remaining settings as recommended.
+
+Step 6: Define Budget Amount
+- Set the budget amount (e.g., $2.00).
+- Keep the other options as recommended and click Next.
+
+Step 7: Configure Alerts
+- Add a threshold value as shown in the example.
+- Provide an email address (can be your main email ID) and click Next.
+
+Step 8: Attach Actions
+- Check for threshold settings and measurement values.
+- Add an action if needed and click Next.
+
+Step 9: Review
+- Review all budget details carefully.
+- Click Create Budget to finalize.
+
+Step 10: Budget Successfully Created!
+- Your budget has been successfully created in AWS.

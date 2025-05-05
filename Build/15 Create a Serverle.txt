@@ -1,0 +1,28 @@
+Assignment No. 15: Create a Serverless Computing Service using AWS Lambda
+Step 1: Create a Lambda Function
+- In the AWS Console, search for Lambda in the search bar and click on Create Function.
+
+Step 2: Configure Function Settings
+- Enter a function name and leave all other settings unchanged.
+
+Step 3: Edit and Deploy the Code
+- Scroll down to the Code section, edit the function code as needed, and click Deploy.
+
+Step 4: Create a Test Event
+- Click Test under Deploy and select Create New Test Event.
+- Enter a test event name and save it.
+
+Step 5: Execute the Test- Click on the Test option.
+- If successful, a notification will appear confirming execution.
+
+Step 6: Generate a Function URL- Navigate to the Configuration tab and select Function URL.
+- Click on Create URL.
+
+Step 7: Copy and Test the Function URL- In the function URL settings, set the Auth Type to None and save the changes.
+- Copy the function URL and paste it into a new browser tab to check if it works.
+
+Step 8: Edit and Redeploy the Code- Return to the Code section and make necessary modifications.
+- Click Deploy to update the function.
+
+Step 9: Refresh the Function URL- Reload the browser tab with the function URL to verify changes.
+Final Result:  Successfully deployed a serverless computing service using AWS Lambda!

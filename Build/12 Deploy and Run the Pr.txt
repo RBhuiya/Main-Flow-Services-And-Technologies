@@ -1,0 +1,37 @@
+Assignment 12: Deploy and Run the Project in AWS Without Using the Port
+Step 1: Create an EC2 Instance
+- Launch a new EC2 instance as you did in Assignment 11. Use the same configuration (for example, using an Ubuntu AMI).
+
+Step 2: Connect to the Instance
+- Connect to your EC2 instance via your preferred SSH client (such as Bitvise SSH Client or the terminal).
+- For example, if using SSH:
+ssh -i /path/to/your-key.pem ubuntu@<EC2-IP-address>
+
+
+Step 3: Modify the Nginx Configuration for the Reverse Proxy
+- Change to the Nginx configuration directory and prepare to edit the default website configuration:
+- Navigate to the directory:
+cd /etc/nginx/sites-available
+ls
+- Change the permissions of the default configuration file so you can edit it:
+sudo chmod 777 default
+- Open the default file in a text editor (using nano for example):
+nano default
+- Locate (or create) the location / { ... } block within the server configuration. Replace or add the following code to proxy incoming HTTP requests to your locally running project on port 4000:
+location / {
+    proxy_pass http://localhost:4000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+}
+
+
+- Save the changes in nano by pressing Ctrl+O, then Enter, and exit with Ctrl+X.
+- (Optional but recommended) Reload the Nginx configuration to apply the changes:
+sudo systemctl reload nginx
+
+
+Step 4: Test the Deployment
+- Open an incognito window in your web browser and paste your EC2 instance’s public URL (or public IP address). Since Nginx now proxies incoming traffic from port 80 to port 4000 internally, you should see your project without having to include :4000 in the URL.

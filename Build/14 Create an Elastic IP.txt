@@ -1,0 +1,20 @@
+Assignment 14: Create an Elastic IP for an Instance
+Step 1: Create an EC2 Instance
+- Launch a new EC2 instance following the same steps used previously.
+
+Step 2: Restart the Instance
+- Navigate to your EC2 Instances section in the AWS Console.
+- Select the created instance and Stop it.
+- After stopping, Start the instance again to restart it.
+
+Step 3: Allocate an Elastic IP
+- Go to Elastic IPs under the AWS EC2 Dashboard.
+- Click on Allocate Elastic IP to create a new IP.
+- Associate the newly created Elastic IP with the running instance.
+
+Step 4: Verify the Elastic IP Assignment- Check the Instance Details to confirm that the public IPv4 address has changed to match the newly allocated Elastic IP.
+
+Step 5: Disassociate and Release the Elastic IP (Cleanup)- If no longer needed, Disassociate the Elastic IP from the instance.
+- Click on Release Elastic IP to remove it permanently.
+- Delete the created EC2 instance if it is no longer required.
+Final Result:  Successfully created, assigned, and managed an Elastic IP for an EC2 instance!

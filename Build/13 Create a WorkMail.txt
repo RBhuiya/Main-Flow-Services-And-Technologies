@@ -1,0 +1,23 @@
+Assignment No. 13: Create a WorkMail for Your Organization
+Step 1: Search and Select WorkMail Service
+- Go to the AWS Console search bar.
+- Type WorkMail and select the N. Virginia region.
+
+Step 2: Create a WorkMail Organization
+- Click on Create WorkMail Organization.
+- Choose the free test domain option and set an alias name for the organization.
+
+Step 3: Add a User to WorkMail- Navigate to the Users section within the organization.
+- Click Add User and enter a username and password.
+
+Step 4: Access Amazon WorkMail Web Application- Go to the organization you created.
+- Click on the Amazon WorkMail Web Application.
+Step 5: Sign In to WorkMail- Fill in the username and password.
+
+- Click Sign In to access the email inbox.
+Step 6: Send an Email from Amazon WorkMail- Click New Item > New Email.
+- Compose a message and send an email to your personal Gmail account.
+
+Step 7: Receive and Reply to an Email- Open your Gmail inbox and check the email received from Amazon WorkMail.
+- Reply to the email from Gmail to confirm successful communication with Amazon WorkMail.
+Result:  Successfully created and tested an Amazon WorkMail organization! 

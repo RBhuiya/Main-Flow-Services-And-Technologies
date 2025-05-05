@@ -1,0 +1,54 @@
+Assignment 7: Hosting a Website on EC2
+Step 1: Launch EC2 Service
+- Search for EC2 in the AWS search bar and click on it.
+Step 2: Check Service Status and Launch an Instance
+- Navigate to the Dashboard to check the EC2 service status.
+- Click Launch Instance to start setting up a new instance.
+Step 3: Configure Instance Settings
+- Name the instance.
+- In the Application and OS Image section, select Ubuntu as the operating system.
+Step 4: Set Up Key Pair
+- Scroll down to the Key Pair section.
+- Click Create Key Pair to generate a new key for secure access.
+Step 5: Configure Network Settings
+- Scroll down to Network Settings.
+- Check the boxes to allow HTTPS and HTTP traffic from the internet.
+Step 6: Finalize Instance Creation
+- The instance is successfully created!
+- Scroll down and click View All Instances.
+Step 7: Retrieve Instance Details
+- In the Instances window, click on the Instance ID.
+- Copy the IPv4 address from the Instance Summary.
+Step 8: Set Up SSH Access
+- Download Bitvise SSH Client from Bitvise SSH Client Download.
+- Install it on your system.
+Step 9: Import Key Pair
+- Open Client Key Manager.
+- Browse and select the saved key pair, then click Import.
+Step 10: Log In to the Server
+- In the Default Profile, click Log In.
+- Accept and save Host Key Verification.
+- Log in successfully.
+Step 11: Configure the Web Server
+- Open the New Terminal Console.
+- Run the following commands to update and upgrade the server:
+sudo apt-get update
+sudo apt-get upgrade
+
+
+Step 12: Install Nginx Web Server
+- Run the following command:
+sudo apt-get install nginx
+
+
+Step 13: Navigate to Web Directory
+- Open New SFTP Window.
+- Navigate to the folder path: /var/www/html.
+Step 14: Upload Website Files
+- Delete the default Nginx HTML file: index.nginx-debian.html.
+- Upload your index.html and link.html files to host the website.
+Step 15: Verify Hosting Success
+- Copy the EC2 instance public IP and test in Incognito Mode.
+- Ensure both pages (index.html and link.html) are functioning correctly.
+Result
+✅ Successfully hosted a website on EC2! 

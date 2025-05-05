@@ -1,0 +1,40 @@
+Assignment 3: Creating an IAM User and Granting Full Access to S3
+Step 1: Open IAM Service
+- Search for IAM in the AWS search bar and click on IAM.
+Step 2: Navigate to Users Section
+- Under the Access Management menu, select Users.
+Step 3: Create a New IAM User
+- Click on Create User.
+Step 4: Configure User Details
+- Enter a username for the IAM user.
+- Select I want to create an IAM user.
+Step 5: Set Password
+- Enter a strong password for the IAM user and click Next.
+Step 6: Assign S3 Permissions
+- Under Permissions Options, select Attach Policies Directly.
+- Search for S3 in the Permission Policies search bar.
+- Select the AmazonS3FullAccess policy and click Next.
+Step 7: Review and Create IAM User
+- Review the IAM user details carefully.
+- Click Create User to finalize.
+Step 8: Download Credentials
+- IAM user has been successfully created!
+- Download the .csv file containing access credentials.
+- Click Return to Users List.
+Step 9: Verify IAM User Access
+- Sign out from the root user account.
+- Sign in using the newly created IAM user credentials.
+Step 10: Reset Password
+- Set a new password for the IAM user.
+- Confirm the password change.
+Step 11: Sign In Successfully
+- Log in again with the IAM user credentials.
+Step 12: Check S3 Access
+- Search for S3 in the AWS search bar.
+- Click on the S3 option in the menu.
+Step 13: Verify Full Access to S3
+- In the Create Bucket section, verify that full access to the S3 service is available.
+Step 14: Test Access Restrictions
+- Search for any random AWS policy to test its accessibility.
+- Confirm that access to policies other than S3 is denied.
+- Successfully created an IAM user with full access restricted to S3 only!

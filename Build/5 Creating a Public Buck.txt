@@ -1,0 +1,34 @@
+Assignment 5: Creating a Public Bucket in AWS, Uploading a File, and Setting Permissions
+Step 1: Create a Public Bucket in Amazon S3
+- Visit Amazon S3 and click Create Bucket.
+Step 2: Configure Bucket Settings
+- Enter a name for the bucket.
+- Under the Object Ownership heading, select ACLs enabled.
+- Uncheck the Block all public access box to make the bucket public.
+- Check the Acknowledgement Box confirming the settings.
+- Leave all other options as default.
+- Scroll down and click Create Bucket.
+Step 3: Open the Bucket
+- After creating the bucket, click on its name to open it.
+Step 4: Upload a File
+- Click the Upload button.
+- Click Add Files and select a file to upload.
+Step 5: Confirm Upload
+- After selecting the file, click Upload to begin the upload process.
+Step 6: Complete Upload
+- Click Close once the upload is successful.
+Step 7: Edit File Permissions
+- Click on the name of the uploaded file to open its settings.
+Step 8: Access File Permissions
+- Navigate to the Permissions tab.
+Step 9: Modify Access Controls
+- Click Edit under the Permissions section.
+Step 10: Set Public Access
+- Modify the Access Control List (ACL) and grant Read-Write permissions to everyone.
+- Save the changes.
+Step 11: Retrieve File URL
+- Go back to the bucket and copy the URL of the uploaded file.
+Step 12: Test File Accessibility
+- Paste the copied URL into a new browser window and verify if it is accessible.
+Step 13: Verify Public Bucket Access
+- If the URL works as expected, the public bucket setup was successful! 

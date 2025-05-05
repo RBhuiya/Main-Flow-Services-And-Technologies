@@ -1,0 +1,37 @@
+Assignment 6: Uploading a Static Website to Amazon S3
+Step 1: Create Static HTML Pages
+- Prepare two static HTML files:
+- The first page should contain a title and a paragraph.
+- The second page should have a link to the first page and a link to an external site (e.g., Google).
+Step 2: Create a Public S3 Bucket
+- Follow the same steps as in the previous assignment to create a public bucket in Amazon S3.
+Step 3: Open the Bucket
+- Once the bucket is created, click on its name to open it.
+Step 4: Upload HTML Files
+- Click the Upload button.
+- Click Add Files and select both HTML files.
+Step 5: Complete the Upload
+- Click Upload to confirm.
+- After the upload is successful, click Close to exit the upload window.
+Step 6: Enable Static Website Hosting
+- Open the S3 bucket.
+- Scroll down to S3 Static Website Hosting and click Edit.
+Step 7: Configure Website Hosting
+- Enable Static Website Hosting.
+- Set the index document (e.g., index.html).
+- Click Save Changes.
+Step 8: Update Permissions for Files
+- Open the index HTML file, click on Permissions, and edit the ACL settings.
+Step 9: Make Pages Public
+- Check the boxes to make the file publicly accessible.
+- Click Save Changes.
+- Repeat the same steps for the second HTML file.
+Step 10: Retrieve the Page URL
+- Navigate back to the bucket and copy the URL of the hosted HTML file.
+Step 11: Test in an Incognito Window
+- Open an incognito browser window.
+- Paste the copied URL to verify accessibility.
+Step 12: Verify Website Deployment
+- Ensure the webpage is displayed correctly with all linked pages accessible.
+Step 13: Successful Website Deployment
+- If everything works as expected, the static website has been successfully uploaded and hosted on S3! 
